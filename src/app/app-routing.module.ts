@@ -11,8 +11,13 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },  {
+<<<<<<< Updated upstream
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+=======
+    path: 'regis',
+    loadChildren: () => import('./regis/regis.module').then( m => m.RegisPageModule)
+>>>>>>> Stashed changes
   },
 
 ];
