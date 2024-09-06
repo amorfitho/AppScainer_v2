@@ -18,7 +18,15 @@ const routes: Routes = [
   {  
     path: 'regis',
     loadChildren: () => import('./regis/regis.module').then( m => m.RegisPageModule)
+  },  {
+    path: 'recu',
+    loadChildren: () => import('./recu/recu.module').then( m => m.RecuPageModule)
   },
+  {
+    path: 'ini',
+    loadChildren: () => import('./ini/ini.module').then( m => m.IniPageModule)
+  },
+
 
 ];
 
