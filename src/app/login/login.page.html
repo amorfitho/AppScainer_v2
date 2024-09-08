@@ -18,7 +18,7 @@
       <ion-card-title>Iniciar Sesión</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <form [formGroup]="formularioLogin"></form>  
+      <form [formGroup]="formularioLogin"> 
         <div>
           <ion-item>
             <ion-label position="floating">Ingrese su Nombre:</ion-label>
@@ -30,7 +30,7 @@
             <br>
             <ion-input formControlName="password" type="password" placeholder="Password.1234" value=""></ion-input>
           </ion-item>
-          <ion-button (click)="ingresar()" expand="block" type="submit"  >Iniciar Sesión</ion-button>
+          <ion-button expand="block" type="submit"  >Iniciar Sesión</ion-button>
         </div>
       </form>
     </ion-card-content>

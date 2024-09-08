@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from  '@angular/router';
-import { FormGroup, FormControl,FormBuilder,Validator, Validators } from '@angular/forms';
+import { FormGroup, 
+          FormControl,
+          Validators,
+          FormBuilder 
+           } from '@angular/forms';
 
 
 

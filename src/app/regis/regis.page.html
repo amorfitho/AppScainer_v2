@@ -15,13 +15,13 @@
       <ion-item>
         <ion-label position="floating">Nombre: </ion-label>
         <br>
-        <ion-input id="nombre" type="char" placeholder="Hans"></ion-input>
+        <ion-input formControlName="nombre" type="String" placeholder="Hans"></ion-input>
         <ion-label position="floating">Apellidos: </ion-label>
         <br>
-        <ion-input id="apellidos" type="char" placeholder="Malpartida Esparza"></ion-input>
+        <ion-input formControlName="apellidos" type="String" placeholder="Malpartida Esparza"></ion-input>
         <ion-label position="floating">Ingrese su Email:</ion-label>
         <br>
-        <ion-input id="email" type="email" placeholder="name@gmail.com"></ion-input>
+        <ion-input formControlName="email" type="email" placeholder="name@gmail.com"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Ingrese su Contraseña:</ion-label>
@@ -33,7 +33,10 @@
             <li>debe tener a menos 1 simbolo.</li>
           </ul>
         <br>
-        <ion-input id="password" type="password" placeholder="Password.1234"></ion-input>
+        <ion-input formControlName="password" type="password" placeholder="Password.1234"></ion-input>
+        <ion-label>confirmar contraseña</ion-label>
+        <br>
+        <ion-input formControlName="confirmarPassword" type="password" aria-placeholder="Repita"></ion-input>
       </ion-item>
       <ion-button expand="block" type="submit">Registrarse</ion-button>
     </div>
