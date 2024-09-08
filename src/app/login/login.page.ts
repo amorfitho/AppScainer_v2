@@ -1,13 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from  '@angular/router';
+import { FormGroup, FormControl,FormBuilder,Validator, Validators } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
+
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  formularioLogin: FormGroup;
+
+  constructor(public fb: FormBuilder) {
+
+    this.formularioLogin = this.fb.group({
+      'nombre': new FormControl("",Validators.required),
+      'password': new FormControl("",Validators.required)
+    })
+
+
+  }
 
   ngOnInit() {
   }
