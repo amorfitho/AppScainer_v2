@@ -11,7 +11,7 @@
     <ion-card-title>Registrarse</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <form [fromGroup]="formularioRegistro" (keyup.enter)="guadar()">
+    <form [formGroup]="formularioRegis" (keyup.enter)="guardar()">
       <div>
         <ion-item>
           <ion-label position="floating">Nombre: </ion-label>

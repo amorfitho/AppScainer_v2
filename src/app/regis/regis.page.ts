@@ -10,10 +10,11 @@ import { AlertController } from '@ionic/angular';
 })
 export class RegisPage implements OnInit {
 
-  formularioRegistro: FormGroup;
+  formularioRegis: FormGroup;
 
   constructor(public fb: FormBuilder, public alertController: AlertController ) { 
-    this.formularioRegistro = this.fb.group({
+
+    this.formularioRegis = this.fb.group({
       'nombre': new FormControl("",Validators.required),
       'apellidos': new FormControl("",Validators.required),
       'email': new FormControl("",Validators.required),
@@ -26,9 +27,9 @@ export class RegisPage implements OnInit {
   }
 
   async guardar(){
-    var f = this.formularioRegistro.value;
+    var f = this.formularioRegis.value;
 
-    if (this.formularioRegistro.invalid){
+    if (this.formularioRegis.invalid){
       const alert = await this.alertController.create({
         header: 'Algo te falto',
         subHeader: 'Subtitle',
