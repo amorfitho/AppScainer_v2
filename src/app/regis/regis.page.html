@@ -14,32 +14,32 @@
     <form [formGroup]="formularioRegis" (keyup.enter)="guardar()">
       <div>
         <ion-item>
-          <ion-label position="floating">Nombre: </ion-label>
-          <br>
-          <ion-input formControlName="nombre" type="String" placeholder="Hans"></ion-input>
-          <ion-label position="floating">Apellidos: </ion-label>
-          <br>
-          <ion-input formControlName="apellidos" type="String" placeholder="Malpartida Esparza"></ion-input>
+          <ion-label position="floating">Nombre:</ion-label>
+          <ion-input formControlName="nombre" type="text" placeholder="Hans"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellidos:</ion-label>
+          <ion-input formControlName="apellidos" type="text" placeholder="Malpartida Esparza"></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-label position="floating">Ingrese su Email:</ion-label>
-          <br>
           <ion-input formControlName="email" type="email" placeholder="name@gmail.com"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Ingrese su Contraseña:</ion-label>
-          <br>
-            <ul>
-              <li>La contraseña debe de tener de 12 a 14 caracteres.</li>
-              <li>debe tener al menos 1 digito.</li>
-              <li>debe tener al menos una letra.</li>
-              <li>debe tener a menos 1 simbolo.</li>
-            </ul>
-          <br>
+          <ul>
+            <li>La contraseña debe de tener de 12 a 14 caracteres.</li>
+            <li>Debe tener al menos 1 dígito.</li>
+            <li>Debe tener al menos una letra.</li>
+            <li>Debe tener al menos 1 símbolo.</li>
+          </ul>
           <ion-input formControlName="password" type="password" placeholder="Password.1234"></ion-input>
-          <ion-label>confirmar contraseña</ion-label>
-          <br>
-          <ion-input formControlName="confirmarPassword" type="password" aria-placeholder="Repita"></ion-input>
         </ion-item>
-        <ion-button (click)="guardar()" expand="block" type="submit">Registrarse</ion-button>
+        <ion-item>
+          <ion-label position="floating">Confirmar Contraseña:</ion-label>
+          <ion-input formControlName="confirmarPassword" type="password" placeholder="Repita"></ion-input>
+        </ion-item>
+        <ion-button (click)="guardar()" expand="block" type="submit" routerLink="/home" >Registrarse</ion-button>
       </div>
     </form>
   </ion-card-content>

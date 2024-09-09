@@ -39,6 +39,7 @@ export class RegisPage implements OnInit {
 
       await alert.present();
       return;
+      
     }
 
     var usuario ={
