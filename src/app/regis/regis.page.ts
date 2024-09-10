@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder,Validators, EmailValidator} from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 
 @Component({
@@ -12,7 +12,7 @@ export class RegisPage implements OnInit {
 
   formularioRegis: FormGroup;
 
-  constructor(public fb: FormBuilder, public alertController: AlertController ) { 
+  constructor(public fb: FormBuilder, public alertController: AlertController, public navControl: NavController ) { 
 
     this.formularioRegis = this.fb.group({
       'nombre': new FormControl("",Validators.required),
@@ -50,7 +50,12 @@ export class RegisPage implements OnInit {
     }
 
     localStorage.setItem('usuario',JSON.stringify(usuario));
+
+    localStorage.setItem('Registrado','true');
+      this.navControl.navigateRoot('');
+
   }
 
+  
 
 }
