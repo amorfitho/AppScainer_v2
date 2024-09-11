@@ -14,7 +14,6 @@ ion-button {
     margin-top: 0px;
 }
 
-
 .center-content {
     display: flex;
     justify-content: center;
@@ -23,6 +22,7 @@ ion-button {
 }
   
 .registro-card {
+    background-color: #C4A402; /* Cambia el color de fondo de la tarjeta */
     width: 90%; /* Ajusta el ancho según tus necesidades */
     max-width: 800px; /* Limita el ancho máximo */
     height: auto; /* Ajusta la altura automáticamente según el contenido */
@@ -45,6 +45,7 @@ ion-item {
 }
   
 .custom-label {
+    background-color: #C4A402;
     font-size: 0.8rem; /* Tamaño de fuente reducido */
     color: #fff; /* Color del texto */
     font-weight: bold; /* Peso de la fuente */

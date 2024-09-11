@@ -9,3 +9,16 @@ ion-toolbar {
 ion-button {
   --background: #FFC300;
 }
+
+.center-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.logeo-card {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    max-width: 400px; /* Limita el ancho máximo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para darle profundidad */
+    border-radius: 8px; /* Añade bordes redondeados */
+}
