@@ -1,0 +1,53 @@
+ion-content {
+    --background: #003566;
+}
+
+ion-toolbar {
+    --background: #000F26;
+}
+
+ion-button {
+  --background: #FFC300;
+}
+
+.boton_inicio{
+    margin-top: 0px;
+}
+
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Usa el 100% de la altura del contenedor padre */
+}
+  
+.registro-card {
+    width: 90%; /* Ajusta el ancho según tus necesidades */
+    max-width: 800px; /* Limita el ancho máximo */
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    margin: 20px; /* Añade un margen alrededor de la tarjeta */
+    padding: 20px; /* Añade un relleno dentro de la tarjeta */
+    position: relative; /* Necesario para posicionar el botón */
+}
+  
+.boton_inicio {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    left: 10px; /* Ajusta la distancia desde la parte izquierda */
+    z-index: 10; /* Asegura que el botón esté por encima del contenido */
+}
+  
+ion-item {
+    --highlight-color-focused: #FFC300; /* Color de resaltado cuando el campo está enfocado */
+    --highlight-color-valid: #4CAF50; /* Color de resaltado cuando el campo es válido */
+    --highlight-color-invalid: #F44336; /* Color de resaltado cuando el campo es inválido */
+}
+  
+.custom-label {
+    font-size: 0.8rem; /* Tamaño de fuente reducido */
+    color: #fff; /* Color del texto */
+    font-weight: bold; /* Peso de la fuente */
+    margin-bottom: 10px; /* Espacio inferior */
+    text-transform: uppercase; /* Transformación de texto */
+}
