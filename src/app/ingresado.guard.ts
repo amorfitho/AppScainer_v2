@@ -6,11 +6,11 @@ export const ingresadoGuard: CanActivateFn = (route, state) => {
 
   const navControl = inject(NavController);
 
-  
+
   if (localStorage.getItem('Ingresado')) {
     return true;
   } else {
-    navControl.navigateRoot('/ini');
+    navControl.navigateRoot('/home');
     return false;
   }
 };

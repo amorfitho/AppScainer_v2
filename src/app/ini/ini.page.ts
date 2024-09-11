@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-ini',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IniPage implements OnInit {
 
-  constructor() { }
+  constructor(public navControl: NavController) {}
 
   ngOnInit() {
   }
 
+
+  async salir() {
+    localStorage.removeItem('Ingresado');
+    console.log('Sesión cerrada');
+    // Redirige al usuario a la página de login después de cerrar sesión
+    this.navControl.navigateRoot('login');
+  }
 }
+
+
