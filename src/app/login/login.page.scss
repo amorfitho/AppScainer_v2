@@ -17,8 +17,15 @@ ion-button {
 }
 
 .logeo-card {
-    width: 100%; /* Ajusta el ancho al 100% del contenedor */
-    max-width: 400px; /* Limita el ancho máximo */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para darle profundidad */
-    border-radius: 8px; /* Añade bordes redondeados */
+    width: 100%;
+    max-width: 400px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+}
+
+h1{
+    color: #4872e4;
+    margin-top: 10px;
+    font-size: 14px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }

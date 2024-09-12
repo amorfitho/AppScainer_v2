@@ -1,6 +1,11 @@
 ion-content {
     --background: #003566;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
+
 
 ion-toolbar {
     --background: #000F26;
@@ -18,37 +23,50 @@ ion-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; /* Usa el 100% de la altura del contenedor padre */
+    height: 100%; 
 }
   
 .registro-card {
-    background-color: #C4A402; /* Cambia el color de fondo de la tarjeta */
-    width: 90%; /* Ajusta el ancho según tus necesidades */
-    max-width: 800px; /* Limita el ancho máximo */
-    height: auto; /* Ajusta la altura automáticamente según el contenido */
-    margin: 20px; /* Añade un margen alrededor de la tarjeta */
-    padding: 20px; /* Añade un relleno dentro de la tarjeta */
-    position: relative; /* Necesario para posicionar el botón */
+    background-color: #001D3D; 
+    width: 90%; 
+    max-width: 800px; 
+    height: auto; 
+    margin: 20px; 
+    padding: 20px; 
+    position: relative; 
+    padding: 16px;
+    border-radius: 20px;
 }
   
 .boton_inicio {
     position: absolute;
-    top: 10px; /* Ajusta la distancia desde la parte superior */
-    left: 10px; /* Ajusta la distancia desde la parte izquierda */
-    z-index: 10; /* Asegura que el botón esté por encima del contenido */
+    top: 10px; 
+    left: 10px; 
+    z-index: 10; 
 }
-  
-ion-item {
-    --highlight-color-focused: #FFC300; /* Color de resaltado cuando el campo está enfocado */
-    --highlight-color-valid: #4CAF50; /* Color de resaltado cuando el campo es válido */
-    --highlight-color-invalid: #F44336; /* Color de resaltado cuando el campo es inválido */
+
+ion-card {
+    --background: #001D3D;
+    color: #fff; 
 }
   
 .custom-label {
-    background-color: #C4A402;
-    font-size: 0.8rem; /* Tamaño de fuente reducido */
-    color: #fff; /* Color del texto */
-    font-weight: bold; /* Peso de la fuente */
-    margin-bottom: 10px; /* Espacio inferior */
-    text-transform: uppercase; /* Transformación de texto */
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.dato-rellenar {
+    color: #fff; 
+}
+
+ion-input::part(native) {
+    color: #fff; 
+}
+
+ion-item {
+    --background: #001D3D; 
+}
+
+.confirmar_botton{
+    margin-bottom: 20px;
 }

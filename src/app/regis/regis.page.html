@@ -4,7 +4,6 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
   <ion-button class="boton_inicio" routerLink="/home">Volver</ion-button>
   <div class="center-content">
@@ -13,11 +12,11 @@
         <ion-card-title>Registrarse</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <form [formGroup]="formularioRegis" (keyup.enter)="guardar()">
+        <form class="fondo" [formGroup]="formularioRegis" (keyup.enter)="guardar()">
           <div>
             <ion-item>
               <ion-label class="custom-label" position="floating">Nombre:</ion-label>
-              <ion-input formControlName="nombre" type="text" placeholder="Hans"></ion-input>
+              <ion-input class="dato-rellenar" formControlName="nombre" type="text" placeholder="Hans"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label class="custom-label" position="floating">Apellidos:</ion-label>
@@ -35,7 +34,7 @@
               <ion-label class="custom-label" position="floating">Confirmar Contraseña:</ion-label>
               <ion-input formControlName="confirmarPassword" type="password" placeholder="Repita"></ion-input>
             </ion-item>
-            <ion-button (click)="guardar()" expand="block" type="submit">Registrarse</ion-button>
+            <ion-button class="confirmar_botton" (click)="guardar()" expand="block" type="submit">Registrarse</ion-button>
           </div>
         </form>
       </ion-card-content>
