@@ -42,7 +42,7 @@ export class RecuPage implements OnInit {
     }
 
     if (f.nombre === usuario.nombre && f.email === usuario.email) {
-      // Actualizar usuario
+     
       var updateUsuario = {
         nombre: f.nombre,
         apellidos: usuario.apellidos,
@@ -50,11 +50,11 @@ export class RecuPage implements OnInit {
         password: f.newpassword
       };
 
-      // Guardamos el usuario actualizado en localStorage
+      
       localStorage.setItem('usuario', JSON.stringify(updateUsuario));
       localStorage.setItem('Actualizado', 'true');
       
-      // Navegamos a la página de login
+      
       this.navControl.navigateRoot('login');
 
     } else {
