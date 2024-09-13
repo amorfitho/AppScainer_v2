@@ -18,6 +18,7 @@ import { AlertController, NavController } from '@ionic/angular';
 export class LoginPage implements OnInit {
 
   formularioLogin: FormGroup;
+  cargando: boolean = false;
 
   constructor(public fb: FormBuilder, public alertController: AlertController, public navControl:NavController) {
 
@@ -33,10 +34,14 @@ export class LoginPage implements OnInit {
   }
 
   async ingresar() {
+
+    this.cargando = true;
+
     const f = this.formularioLogin.value;
 
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
 
+    setTimeout(async () => {
     if (usuario.nombre == f.nombre && usuario.password== f.password){
       console.log('Ingresado');
       localStorage.setItem('Ingresado','true');
@@ -46,10 +51,11 @@ export class LoginPage implements OnInit {
         header: 'Algo te falto',
         message: 'Tienes que llenar todos los campos.',
         buttons: ['Ta Bien']
-      })
+      });
 
       await alert.present();
-      return;
     }
+    this.cargando = false;
+    }, 2000);
   }
 }
