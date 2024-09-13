@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, 
-  FormControl,
-  Validators,
-  FormBuilder 
-   } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
-
 
 @Component({
   selector: 'app-recu',
@@ -16,44 +11,61 @@ export class RecuPage implements OnInit {
 
   formularioRecu: FormGroup;
 
-  constructor(public fb: FormBuilder, public alertController: AlertController, public navControl:NavController) { 
+  constructor(
+    public fb: FormBuilder, 
+    public alertController: AlertController, 
+    public navControl: NavController
+  ) { 
     this.formularioRecu = this.fb.group({
-      'nombre': new FormControl("",Validators.required),
-      'oldpassword': new FormControl("",Validators.required),
-      'password': new FormControl("",Validators.required),
-      'comfirmpassword': new FormControl("",Validators.required)
-    })
-
+      'nombre': new FormControl("", Validators.required),
+      'email': new FormControl("", [Validators.required, Validators.email]), // Valida que sea un email válido
+      'newpassword': new FormControl("", [Validators.required, Validators.minLength(6)]), // Contraseña de mínimo 6 caracteres
+      'confirmpassword': new FormControl("", Validators.required)
+    });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  async actulizar(){
-    const f = this.formularioRecu.value;
-
+  async actualizar() {
+    var f = this.formularioRecu.value;
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
-
-    localStorage.getItem('password');
-
-    if (usuario.nombre== f.nombre && usuario.password==f.oldpassword && f.password==f.comfirmpassword){
-      console.log('Actualizado');
-      localStorage.setItem('Actualizado','true');
-      localStorage.getItem('password');
-      this.navControl.navigateRoot('login');
-    }else{
+    
+    // Verificamos que el formulario esté lleno correctamente y las contraseñas coincidan
+    if (f.newpassword !== f.confirmpassword) {
       const alert = await this.alertController.create({
-        header: 'Algo te falto',
-        message: 'Tienes que llenar todos los campos.',
-        buttons: ['Ta Bien']
-      })
-
+        header: 'Error',
+        message: 'Las contraseñas no coinciden.',
+        buttons: ['OK']
+      });
       await alert.present();
       return;
     }
 
+    if (f.nombre === usuario.nombre && f.email === usuario.email) {
+      // Actualizar usuario
+      var updateUsuario = {
+        nombre: f.nombre,
+        apellidos: usuario.apellidos,
+        email: f.email,
+        password: f.newpassword
+      };
+
+      // Guardamos el usuario actualizado en localStorage
+      localStorage.setItem('usuario', JSON.stringify(updateUsuario));
+      localStorage.setItem('Actualizado', 'true');
+      
+      // Navegamos a la página de login
+      this.navControl.navigateRoot('login');
+
+    } else {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Los datos no coinciden con los del usuario actual.',
+        buttons: ['OK']
+      });
+      await alert.present();
+      return;
+    }
   }
-
-
-
 }
+
