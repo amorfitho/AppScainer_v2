@@ -8,11 +8,24 @@ import { AlertController, NavController } from '@ionic/angular';
 })
 export class IniPage implements OnInit {
 
+  nombre: string = '';
+  apellidos: string = '';
+  email: string = '';
+
+
   constructor(public navControl: NavController) {}
 
   ngOnInit() {
   }
 
+  datosentrada() {
+    
+    const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
+    
+    this.nombre = usuario.nombre || 'Usuario';
+    this.apellidos = usuario.apellidos || 'apellido paterno apellido materno';
+    this.email = usuario.email || 'email@gmai.cl';
+  }
 
   async salir() {
     localStorage.removeItem('Ingresado');
