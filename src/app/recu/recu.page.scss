@@ -23,3 +23,25 @@ ion-button {
   border-radius: 50%; /* Hace que la imagen sea redonda */
   object-fit: cover; /* Asegura que la imagen se recorte correctamente dentro del contenedor redondo */
 }
+
+ion-card {
+  --background: #001D3D;
+  color: #fff; 
+}
+
+.custom-label {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.dato-rellenar {
+  color: #fff; 
+}
+
+ion-input::part(native) {
+  color: #fff; 
+}
+
+ion-item {
+  --background: #001D3D; 
+}
