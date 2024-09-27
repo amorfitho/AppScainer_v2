@@ -34,6 +34,12 @@ const routes: Routes = [
     loadChildren: () => import('./ini/ini.module').then( m => m.IniPageModule),
     canActivate: [ingresadoGuard]
   },
+  {
+    path: '**',
+    loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule),
+    canActivate: [noIngresadoGuard]
+  },
+
 
 
 ];
