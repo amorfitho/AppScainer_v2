@@ -33,7 +33,11 @@ const routes: Routes = [
     path: 'ini',
     loadChildren: () => import('./ini/ini.module').then( m => m.IniPageModule),
     canActivate: [ingresadoGuard]
+  },  {
+    path: 'crud-usuario',
+    loadChildren: () => import('./crud-usuario/crud-usuario.module').then( m => m.CrudUsuarioPageModule)
   },
+
 
 
 ];
