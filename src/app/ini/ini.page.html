@@ -5,13 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!--<ion-card>
+  <ion-card *ngIf="usuario">
     <ion-card-header>
-      <ion-card-title>Bienbeindo{{ nombre }}</ion-card-title>
+      <ion-card-title>Bienbeindo{{ usuario.nombre }} {{ usuario.apallidos}}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
     </ion-card-content>
-  </ion-card> -->
+  </ion-card> 
   <ion-button (click)="salir()" class="boton_inicio" >Cerrar sesion </ion-button> 
   <h1>bienvenido</h1>
   <ion-avatar>

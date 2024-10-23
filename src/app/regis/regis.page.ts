@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl,FormBuilder,Validators, EmailValidator} from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+import { ApiService } from '../services/api.service';
+
 
 
 @Component({
@@ -12,7 +14,7 @@ export class RegisPage implements OnInit {
 
   formularioRegis: FormGroup;
 
-  constructor(public fb: FormBuilder, public alertController: AlertController, public navControl: NavController ) { 
+  constructor(public fb: FormBuilder, public alertController: AlertController, public navControl: NavController, private apiService: ApiService ) { 
 
     this.formularioRegis = this.fb.group({
       'nombre': new FormControl("",Validators.required),
@@ -39,8 +41,19 @@ export class RegisPage implements OnInit {
 
       await alert.present();
       return;
-      
     }
+    
+    //confrimar contraseña
+    if (f.password !== f.confirmarPassword) {
+      const alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Las contraseñas no coinciden.',
+        buttons: ['Entendido']
+      });
+      await alert.present();
+      return;
+    }
+
 
     var usuario ={
       nombre: f.nombre,
@@ -49,11 +62,30 @@ export class RegisPage implements OnInit {
       password: f.password
     }
 
+    this.apiService.createUsuario(usuario).subscribe(async (response) => {
+      const alert = await this.alertController.create({
+        header: 'Éxito',
+        message: 'Usuario registrado correctamente.',
+        buttons: ['Ok']
+      });
+      await alert.present();
+    
+      // Redirigir a la página principal después del registro
+    this.navControl.navigateRoot('perfil');  // Puedes redirigir a cualquier otra página
+  }, async (error) => {
+    const alert = await this.alertController.create({
+      header: 'Error',
+      message: 'Hubo un problema al registrar el usuario.',
+      buttons: ['Entendido']
+    });
+    await alert.present();
+  });
+  /*
     localStorage.setItem('usuario',JSON.stringify(usuario));
 
     localStorage.setItem('Registrado','true');
       this.navControl.navigateRoot('');
-
+*/
   }
 
   

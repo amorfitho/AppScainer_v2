@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-ini',
@@ -12,10 +13,16 @@ export class IniPage implements OnInit {
   apellidos: string = '';
   email: string = '';
 
+  usuario: any;
 
-  constructor(public navControl: NavController) {}
+
+  constructor(public navControl: NavController, private apiService: ApiService) {}
 
   ngOnInit() {
+    const userId =Number('1');  
+    this.apiService.getUsuarioById(userId).subscribe(data => {
+      this.usuario = data;
+    });
   }
 
   datosentrada() {
