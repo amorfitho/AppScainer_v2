@@ -37,7 +37,7 @@ export class IniPage implements OnInit {
 
   private getUserEmail(): string {
     // Implementa una manera de obtener el email del usuario, por ejemplo a través de un servicio o algún otro medio
-    return ''; // Cambia esto a tu lógica
+    return this.nombre, this.apellidos, this.email; // Cambia esto a tu lógica
   }
 
 
