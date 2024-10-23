@@ -29,7 +29,7 @@ export class RegisPage implements OnInit {
   }
 
   async guardar(){
-    var f = this.formularioRegis.value;
+    const f = this.formularioRegis.value;
 
     if (this.formularioRegis.invalid){
       const alert = await this.alertController.create({
@@ -48,14 +48,14 @@ export class RegisPage implements OnInit {
       const alert = await this.alertController.create({
         header: 'Error',
         message: 'Las contraseñas no coinciden.',
-        buttons: ['Entendido']
+        buttons: ['ta bien']
       });
       await alert.present();
       return;
     }
 
 
-    var usuario ={
+    const usuario ={
       nombre: f.nombre,
       apellidos: f.apellidos,
       email: f.email,
@@ -71,7 +71,7 @@ export class RegisPage implements OnInit {
       await alert.present();
     
       // Redirigir a la página principal después del registro
-    this.navControl.navigateRoot('perfil');  // Puedes redirigir a cualquier otra página
+    this.navControl.navigateRoot('ini');  // Puedes redirigir a cualquier otra página
   }, async (error) => {
     const alert = await this.alertController.create({
       header: 'Error',

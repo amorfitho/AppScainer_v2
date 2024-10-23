@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-crud-usuarios',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrudUsuariosPage implements OnInit {
 
-  constructor() { }
+  usuarios: any[] = [];
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.getUsuarios();
   }
 
+  // Obtener todos los usuarios
+  getUsuarios() {
+    this.apiService.getUsuarios().subscribe(data => {
+      this.usuarios = data;
+    });
+  }
+
+  // Eliminar un usuario
+  eliminarUsuario(id: number) {
+    this.apiService.deleteUsuario(id).subscribe(() => {
+      this.getUsuarios();  // Refrescar la lista de usuarios
+    });
+  }
 }

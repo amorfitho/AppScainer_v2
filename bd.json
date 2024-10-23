@@ -1,4 +1,11 @@
-
 {
-    "usuarios":[]
+  "usuarios": [
+    {
+      "id": "47b9",
+      "nombre": "vale",
+      "apellidos": "latorre",
+      "email": "vale@gmail.com",
+      "password": "789"
+    }
+  ]
 }

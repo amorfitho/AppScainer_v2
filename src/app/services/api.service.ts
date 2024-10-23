@@ -16,6 +16,19 @@ export class ApiService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  //autenticate por nombre y contra
+  autenticarUsuario(nombre: string, password: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}?nombre=${nombre}&password=${password}`);
+  }
+  //ntento
+  getUsuarioByNombre(nombre:string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/nombre=${nombre}`);
+  }
+  
+
+  getUsuarioByEmail(email: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}?email=${email}`);}
+
   // Obtener un usuario por ID
   getUsuarioById(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);

@@ -4,10 +4,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">crud-usuarios</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios">
+      <ion-label>
+        <h2>{{ usuario.nombre }} {{ usuario.apellidos }}</h2>
+        <p>{{ usuario.email }}</p>
+      </ion-label>
+      <ion-button color="danger" (click)="eliminarUsuario(usuario.id)">Eliminar</ion-button>
+      <!-- Aquí puedes agregar botones de editar -->
+    </ion-item>
+  </ion-list>
 </ion-content>
+
