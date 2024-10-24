@@ -36,8 +36,14 @@ export class IniPage implements OnInit {
     }
   }
 
+<<<<<<< HEAD
   private getUsuarioById(): string {
     return this.nombre, this.apellidos, this.email; 
+=======
+  private getUserEmail(): string {
+    // Implementa una manera de obtener el email del usuario, por ejemplo a través de un servicio o algún otro medio
+    return ''; // Cambia esto a tu lógica
+>>>>>>> parent of f4fccc2 (intento terminar crud aver que sale)
   }
 
 
