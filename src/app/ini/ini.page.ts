@@ -18,9 +18,33 @@ export class IniPage implements OnInit {
 
 
   ngOnInit() {
+    const userId= this.getUsuarioById();
+    
+
+    if (userId) {
+      this.apiService.getUsuarioById(userId).subscribe({
+        next: (data) => {
+          this.usuario = data;
+          this.nombre = this.usuario.nombre;
+          this.apellidos = this.usuario.apellidos;
+          this.email = this.usuario.email;
+        },
+        error: (error) => {
+          console.error('Error al obtener el usuario:', error);
+        }
+      });
     }
   }
 
+<<<<<<< HEAD
+  private getUsuarioById(): string {
+    return this.nombre, this.apellidos, this.email; 
+=======
+  private getUserEmail(): string {
+    // Implementa una manera de obtener el email del usuario, por ejemplo a través de un servicio o algún otro medio
+    return ''; // Cambia esto a tu lógica
+>>>>>>> parent of f4fccc2 (intento terminar crud aver que sale)
+  }
 
 
   async salir() {

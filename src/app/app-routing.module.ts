@@ -39,6 +39,14 @@ const routes: Routes = [
     loadChildren: () => import('./error/error.module').then( m => m.ErrorPageModule),
     canActivate: [noIngresadoGuard]
   },
+  {
+    path: 'crud-usuarios',
+    loadChildren: () => import('./crud-usuarios/crud-usuarios.module').then( m => m.CrudUsuariosPageModule),
+    canActivate: [ingresadoGuard]
+  },  {
+    path: 'crud-modifi',
+    loadChildren: () => import('./crud-modifi/crud-modifi.module').then( m => m.CrudModifiPageModule)
+  },
 
 
   
