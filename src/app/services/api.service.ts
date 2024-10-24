@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:3000/usuarios';
+  private apiUrl = 'http://localhost:3000/usuario';
 
   constructor(private http: HttpClient) { }
 
@@ -30,22 +30,21 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}?email=${email}`);}
 
   // Obtener un usuario por ID
-  getUsuarioById(id: number): Observable<any> {
+  getUsuarioById(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
-
   // Crear un nuevo usuario
   createUsuario(usuario: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, usuario);
   }
 
   // Actualizar un usuario
-  updateUsuario(id: number, usuario: any): Observable<any> {
+  actualizarUsuario(id: string, usuario: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${id}`, usuario);
   }
 
   // Eliminar un usuario
-  deleteUsuario(id: number): Observable<any> {
+  deleteUsuario(id: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 }

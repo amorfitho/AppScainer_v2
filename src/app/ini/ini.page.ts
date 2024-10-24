@@ -18,10 +18,11 @@ export class IniPage implements OnInit {
 
 
   ngOnInit() {
-    const usuarioEmail = this.getUserEmail(); 
+    const userId= this.getUsuarioById();
+    
 
-    if (usuarioEmail) {
-      this.apiService.getUsuarioByEmail(usuarioEmail).subscribe({
+    if (userId) {
+      this.apiService.getUsuarioById(userId).subscribe({
         next: (data) => {
           this.usuario = data;
           this.nombre = this.usuario.nombre;
@@ -35,9 +36,8 @@ export class IniPage implements OnInit {
     }
   }
 
-  private getUserEmail(): string {
-    // Implementa una manera de obtener el email del usuario, por ejemplo a través de un servicio o algún otro medio
-    return this.nombre, this.apellidos, this.email; // Cambia esto a tu lógica
+  private getUsuarioById(): string {
+    return this.nombre, this.apellidos, this.email; 
   }
 
 

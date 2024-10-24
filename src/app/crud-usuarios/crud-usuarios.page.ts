@@ -24,7 +24,7 @@ export class CrudUsuariosPage implements OnInit {
   }
 
   // Eliminar un usuario
-  eliminarUsuario(id: number) {
+  eliminarUsuario(id: string) {
     this.apiService.deleteUsuario(id).subscribe(() => {
       this.getUsuarios();  // Refrescar la lista de usuarios
     });

@@ -7,15 +7,15 @@
 <ion-content [fullscreen]="true">
   <ion-card *ngIf="usuario">
     <ion-card-header>
-      <ion-card-title>Bienbeindo{{ usuario.nombre }} {{ usuario.apallidos}}</ion-card-title>
+      <ion-card-title>Bienvenido</ion-card-title>
     </ion-card-header>
     <ion-card-content>
     </ion-card-content>
   </ion-card> 
   <ion-button (click)="salir()" class="boton_inicio" >Cerrar sesion </ion-button> 
-  <ion-button  routerLink="/crud-usuarios">Crud</ion-button> 
-  <h1>bienvenido</h1>
+  <h1>Bienvenido</h1>
   <ion-avatar>
     <img class="perfil" alt="Silhouette of a person's head" src="assets/icon/hasbulla.jpg" />
-  </ion-avatar>  
+  </ion-avatar>
+  <ion-button  routerLink="/crud-usuarios">Crud</ion-button> 
 </ion-content>

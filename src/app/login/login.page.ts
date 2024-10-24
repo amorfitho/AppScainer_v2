@@ -42,9 +42,11 @@ export class LoginPage implements OnInit {
 
     // Llama al servicio para autenticar el usuario
     this.apiService.autenticarUsuario(f.nombre, f.password).subscribe({
-      next: (usuarios) => {
-        if (usuarios.length > 0) {
+      next: (usuario) => {
+        if (usuario.length > 0) {
           console.log('Ingresado');
+          const userId = usuario.id;
+          localStorage.setItem('userId', userId);
           localStorage.setItem('Ingresado', 'true');
           this.navControl.navigateRoot('ini'); 
         } else {
