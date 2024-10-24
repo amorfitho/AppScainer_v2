@@ -33,6 +33,7 @@ export class IniPage implements OnInit {
     // Redirige al usuario a la página de login después de cerrar sesión
     this.navControl.navigateRoot('login');
   }
+  //quiero suicidarme
 }
 
 
